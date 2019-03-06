@@ -11,18 +11,28 @@ describe("GET /", () => {
       request.get(base, (err, res, body) => {
         expect(res.statusCode).toBe(200);
         expect(body).toContain("Welcome to Bloccit");
-        done();
+      });
       });
     });
 
+    it("should return status code 200", (done) => {
+         request.get(marcoBase, (err, res, body) => {
+           expect(res.statusCode).toBe(200);
+           done();
+         });
+       });
+
     it("response body should return string 'Polo'", (done) => {
      request.get(marcoBase, (err, res, body) => {
+      expect(response.statusCode).toBe(200);
        expect(body).toContain('Polo');
        done();
      });
    });
+
     it("response body should contain string 'About Us'", (done) => {
        request.get(aboutBase, (err, res, body) => {
+         expect(response.statusCode).toBe(200);
          expect(body).toContain('About Us');
          done();
        });

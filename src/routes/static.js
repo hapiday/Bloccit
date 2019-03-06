@@ -11,5 +11,5 @@ router.get("/marco", (req, res, next) => {
 
 router.get("/about", (req, res, next) => {
   res.send("About us");
-}
+});
 module.exports = router;
